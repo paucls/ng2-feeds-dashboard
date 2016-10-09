@@ -1,5 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {FeedService} from './feed.service';
+import { Component, OnInit } from '@angular/core';
+import { FeedService } from './feed.service';
+import { Feed } from './feed';
 
 @Component({
   selector: 'feed-card',
@@ -9,9 +10,9 @@ import {FeedService} from './feed.service';
 })
 export class FeedCardComponent implements OnInit {
 
-  feed;
+  feed: Feed;
 
-  constructor(private feedService:FeedService) {
+  constructor(private feedService: FeedService) {
   }
 
   ngOnInit() {
