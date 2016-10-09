@@ -16,7 +16,9 @@ export class FeedCardComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.feed = this.feedService.getFeed('http://elpais.com/tag/rss/futbol/a/');
+    this.feedService
+      .getFeed('http://elpais.com/tag/rss/futbol/a/')
+      .subscribe(feed => this.feed = feed);
   }
 
 }
