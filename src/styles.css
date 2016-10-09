@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  padding-top: 5rem;
+}
+
+/* Fix for card-columns cutting off cards on top and bottom (https://github.com/twbs/bootstrap/issues/20654) */
+.card-columns .card {
+  display: inline-block;
+}
