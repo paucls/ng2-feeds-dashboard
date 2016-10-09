@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FeedService } from './feed.service';
 import { Feed } from './feed';
 
@@ -10,6 +10,7 @@ import { Feed } from './feed';
 })
 export class FeedCardComponent implements OnInit {
 
+  @Input() url: string;
   feed: Feed;
 
   constructor(private feedService: FeedService) {
@@ -17,8 +18,11 @@ export class FeedCardComponent implements OnInit {
 
   ngOnInit() {
     this.feedService
-      .getFeed('http://elpais.com/tag/rss/futbol/a/')
-      .subscribe(feed => this.feed = feed);
+      .getFeed(this.url)
+      .subscribe(feed => {
+        this.feed = feed;
+        this.feed.items = (feed.items ? feed.items.slice(0, 5) : []);
+      });
   }
 
 }

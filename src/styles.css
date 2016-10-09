@@ -4,6 +4,6 @@ body {
 }
 
 /* Fix for card-columns cutting off cards on top and bottom (https://github.com/twbs/bootstrap/issues/20654) */
-.card-columns .card {
-  display: inline-block;
-}
+/*.card-columns .card {*/
+  /*display: inline-block;*/
+/*}*/
