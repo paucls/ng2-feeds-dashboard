@@ -21,8 +21,12 @@ export class FeedCardComponent implements OnInit {
       .getFeed(this.url)
       .subscribe(feed => {
         this.feed = feed;
-        this.feed.items = (feed.items ? feed.items.slice(0, 5) : []);
+        this.feed.items = feed.items.filter(this.limitTo5);
       });
+  }
+
+  limitTo5(item, index) {
+    return index < 5;
   }
 
 }
