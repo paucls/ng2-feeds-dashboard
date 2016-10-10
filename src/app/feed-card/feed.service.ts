@@ -11,7 +11,7 @@ import { Feed } from './feed';
 @Injectable()
 export class FeedService {
 
-  private rss2jsonApiEndpoint: string = 'http://rss2json.com/api.json?rss_url=';
+  private rss2jsonApiEndpoint: string = 'https://rss2json.com/api.json?rss_url=';
 
   constructor(private http: Http) { }
 
