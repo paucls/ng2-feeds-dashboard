@@ -2,6 +2,8 @@
 
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { FeedCardComponent } from './feed-card/feed-card.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
 describe('App: Ng2PersonalDashboard', () => {
@@ -9,6 +11,8 @@ describe('App: Ng2PersonalDashboard', () => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
+        DashboardComponent,
+        FeedCardComponent,
         NavbarComponent
       ],
     });
