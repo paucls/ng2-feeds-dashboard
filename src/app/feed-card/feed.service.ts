@@ -6,7 +6,6 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/observable/throw';
 
 import { Feed } from './feed';
-// import { MOCK_FEED } from './mock-feed';
 
 @Injectable()
 export class FeedService {
