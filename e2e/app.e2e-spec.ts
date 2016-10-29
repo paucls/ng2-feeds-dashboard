@@ -1,10 +1,10 @@
-import { Ng2PersonalDashboardPage } from './app.po';
+import { FeedsDashboardPage } from './app.po';
 
 describe('ng2-feeds-dashboard App', function() {
-  let page: Ng2PersonalDashboardPage;
+  let page: FeedsDashboardPage;
 
   beforeEach(() => {
-    page = new Ng2PersonalDashboardPage();
+    page = new FeedsDashboardPage();
   });
 
   it('should display message saying app works', () => {

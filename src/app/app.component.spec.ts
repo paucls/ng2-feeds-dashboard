@@ -6,7 +6,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { FeedCardComponent } from './feed-card/feed-card.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
-describe('App: Ng2PersonalDashboard', () => {
+describe('App: Ng2FeedsDashboard', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [

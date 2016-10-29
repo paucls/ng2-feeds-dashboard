@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-export class Ng2PersonalDashboardPage {
+export class FeedsDashboardPage {
   navigateTo() {
     return browser.get('/');
   }
