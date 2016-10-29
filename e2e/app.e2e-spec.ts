@@ -1,6 +1,6 @@
 import { Ng2PersonalDashboardPage } from './app.po';
 
-describe('ng2-personal-dashboard App', function() {
+describe('ng2-feeds-dashboard App', function() {
   let page: Ng2PersonalDashboardPage;
 
   beforeEach(() => {

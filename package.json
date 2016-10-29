@@ -1,5 +1,5 @@
 {
-  "name": "ng2-personal-dashboard",
+  "name": "ng2-feeds-dashboard",
   "version": "0.0.0",
   "license": "MIT",
   "angular-cli": {},
@@ -20,7 +20,7 @@
     "@angular/platform-browser": "~2.1.0",
     "@angular/platform-browser-dynamic": "~2.1.0",
     "@angular/router": "~3.1.0",
-    "bootstrap": "~4.0.0-alpha.4",  
+    "bootstrap": "~4.0.0-alpha.4",
     "core-js": "^2.4.1",
     "rxjs": "5.0.0-beta.12",
     "ts-helpers": "^1.1.1",
