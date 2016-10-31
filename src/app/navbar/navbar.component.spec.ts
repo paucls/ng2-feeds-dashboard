@@ -22,7 +22,7 @@ describe('Component: Navbar', () => {
     let fixture = TestBed.createComponent(NavbarComponent);
     fixture.detectChanges();
     let compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('a.navbar-brand').textContent).toContain('Personal Dashboard');
+    expect(compiled.querySelector('a.navbar-brand').textContent).toContain('Feeds Dashboard');
   }));
 
 });
