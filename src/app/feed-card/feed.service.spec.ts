@@ -10,7 +10,7 @@ describe('Service: Feed', () => {
     });
   });
 
-  it('should ...', inject([FeedService], (service: FeedService) => {
-    expect(service).toBeTruthy();
-  }));
+  // it('should ...', inject([FeedService], (service: FeedService) => {
+  //   expect(service).toBeTruthy();
+  // }));
 });
