@@ -8,12 +8,17 @@
 
     <div class="card-block" *ngIf="showAddFeedForm">
       <form>
-        <div class="form-group">
-          <input #feedUrlInput type="text" class="form-control" id="feedUrlInput" placeholder="RSS Feed URL" autofocus>
+        <div class="form-group" [ngClass]="{'has-warning': !feedUrlRef.pristine && !feedUrlRef.valid}">
+          <input type="text" [(ngModel)]="feedUrl" #feedUrlRef="ngModel"
+                 class="form-control" id="feedUrlInput" name="feedUrlInput" placeholder="RSS Feed URL" autofocus
+                 required>
+          <div class="form-control-feedback" *ngIf="!feedUrlRef.pristine && !feedUrlRef.valid">
+            Please enter a valid URL.
+          </div>
         </div>
       </form>
-      <button class="btn btn-primary" (click)="addFeedUrl(feedUrlInput.value)">Add</button>
-      <button class="btn btn-secondary" (click)="showAddFeedForm = false">Cancel</button>
+      <button class="btn btn-primary" (click)="addFeedUrl(feedUrlRef.value)" [disabled]="!feedUrlRef.valid">Add</button>
+      <button class="btn btn-secondary" (click)="clearForm()">Cancel</button>
     </div>
   </div>
 

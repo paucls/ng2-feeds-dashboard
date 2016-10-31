@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
+  feedUrl: string = '';
   feedUrls: Array<string>;
   showAddFeedForm: boolean = false;
 
@@ -23,6 +24,11 @@ export class DashboardComponent implements OnInit {
 
   addFeedUrl(feedUrl: string) {
     this.feedUrls.push(feedUrl);
+    this.showAddFeedForm = false;
+  }
+
+  clearForm() {
+    this.feedUrl = '';
     this.showAddFeedForm = false;
   }
 
