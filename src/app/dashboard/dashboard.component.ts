@@ -8,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class DashboardComponent implements OnInit {
 
   feedUrls: Array<string>;
+  showAddFeedForm: boolean = false;
 
-  constructor() {
+  constructor() {}
+
+  ngOnInit() {
     this.feedUrls = [
       'http://elpais.com/tag/rss/futbol/a/',
       'http://www.superdeporte.es/elementosInt/rss/2',
@@ -18,7 +21,9 @@ export class DashboardComponent implements OnInit {
     ];
   }
 
-  ngOnInit() {
+  addFeedUrl(feedUrl: string) {
+    this.feedUrls.push(feedUrl);
+    this.showAddFeedForm = false;
   }
 
 }
