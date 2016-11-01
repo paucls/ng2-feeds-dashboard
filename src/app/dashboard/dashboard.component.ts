@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { LocalStorageService } from '../core/local-storage.service';
 
 @Component({
   selector: 'dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.css'],
+  providers: [LocalStorageService]
 })
 export class DashboardComponent implements OnInit {
 
@@ -11,19 +13,32 @@ export class DashboardComponent implements OnInit {
   feedUrls: Array<string>;
   showAddFeedForm: boolean = false;
 
-  constructor() {}
+  private DEFAULT_FEED_URLS = [
+    'http://elpais.com/tag/rss/futbol/a/',
+    'http://www.superdeporte.es/elementosInt/rss/2',
+    'http://ep00.epimg.net/rss/tags/ultimas_noticias.xml',
+    'http://estaticos.elmundo.es/elmundo/rss/portada.xml'
+  ];
+
+  constructor(private localStorageService: LocalStorageService) {}
 
   ngOnInit() {
-    this.feedUrls = [
-      'http://elpais.com/tag/rss/futbol/a/',
-      'http://www.superdeporte.es/elementosInt/rss/2',
-      'http://ep00.epimg.net/rss/tags/ultimas_noticias.xml',
-      'http://estaticos.elmundo.es/elmundo/rss/portada.xml'
-    ];
+    this.loadFeedUrls();
+  }
+
+  private loadFeedUrls() {
+    this.feedUrls = this.localStorageService.get('feedUrls');
+
+    if (!this.feedUrls) {
+      this.localStorageService.save('feedUrls', this.DEFAULT_FEED_URLS);
+      this.feedUrls = this.localStorageService.get('feedUrls');
+    }
   }
 
   addFeedUrl(feedUrl: string) {
     this.feedUrls.push(feedUrl);
+    this.localStorageService.save('feedUrls', this.feedUrls);
+
     this.showAddFeedForm = false;
   }
 
